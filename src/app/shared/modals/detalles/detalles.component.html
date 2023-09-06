@@ -1,0 +1,47 @@
+<!--Este es el componente con todos los detalles de cada uno de los componentes de material (reveer forma de hacerlo más óptimo)-->
+
+<div class="container">
+    <div mat-dialog-title> Detalles {{title}}</div>
+    <div mat-dialog-content *ngIf="data == 'matAutocomplete'">
+        <h3>Pasos a seguir para su implementación:</h3>
+        <ol class="ordenated-list">
+            <li><b>1&#41;</b> Implementar el componente mat-autcomplete dentro de su respectivo formulario</li>
+            <br>
+            <li><b>2&#41;</b> Declarar el elemento ej. provincias: filteredValues: Observable&#60;Provincia[]&#62; <br>dentro del TS</li>
+            <br>
+            <li><b>3&#41;</b> Dentro de la etiqueta mat-autocomplete declarar [displayWith]="displayFn" y dentro del &#60;mat-option
+                *ngFor="let value of filteredValues | async" [value]="value"&#62;
+            </li>
+            <br>
+            <li><b>4&#41;</b> Crear una variable array con el tipo del modelo ej. listValues: Provincia[];
+            </li>
+            <br>
+            <li>
+                <b>5&#41;</b> Llamar al servicio en el ngOnInit para obtener las provincias y llenar el array:<br>
+                <p>this.generalService.obtenerProvincias().subscribe(res => &#123;<br>
+                    this.listValues = res;
+                    <br>
+                    this.ordenarListaProvincias(this.listValues);
+                    <br>
+                    this.provinciasOrdenadas = this.ordenarListaProvincias(this.listValues);
+                    <br>
+                    &#125;).add(() => &#123;
+                    <br>
+                    this.filteredValues = this.formularioAutocomplete.controls['Provincia'].valueChanges.pipe(
+                      startWith(''),
+                    <br>
+                      map(value => 
+                    <br>
+                        const prov = typeof value === 'string' ? value : value.nombre; 
+                    <br>    
+                        return this._filter(prov || '')
+                    &#125;)
+                    )
+                );</p>
+            </li>
+            <br>
+            <li><b>6&#41;</b> Declarar métodos de filtrado y de displayFn</li>
+        </ol>
+    </div>
+    <button mat-stroked-button mat-dialog-close class="cerrarDetallesbtn">Cerrar</button>
+</div>
