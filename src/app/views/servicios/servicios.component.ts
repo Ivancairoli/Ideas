@@ -30,7 +30,7 @@ export class ServiciosComponent implements OnInit {
   //Formulario CRUD
   formularioCrud: FormGroup;
   minDate: Date = new Date();
-  datosCrud: Objeto[];
+  datosCrud: Objeto[] = [];
   //------Fin Formulario CRUD-------
 
   constructor(private generalService: GeneralService,
@@ -42,7 +42,8 @@ export class ServiciosComponent implements OnInit {
       //Formulario CRUD
       this.formularioCrud = new FormGroup({
         fecha: new FormControl("",[]),
-        titulo: new FormControl("", [])
+        titulo: new FormControl("", []),
+        descripcion: new FormControl("", [])
       })
    }
 
@@ -84,5 +85,22 @@ export class ServiciosComponent implements OnInit {
     this.consulted = true
     let valores = this.formularioAutocomplete.getRawValue();
     console.log(valores);
+  }
+
+  LimpiarFormulario(): void {
+    this.formularioCrud.reset();
+  }
+
+  EnviarFormulario(){
+    const valoresForm = this.formularioCrud.value;
+    const objeto: Objeto = new Objeto(
+      valoresForm.fecha,
+      valoresForm.titulo,
+      valoresForm.descripcion,
+      valoresForm.id = this.datosCrud.length + 1
+    )
+    this.datosCrud.push(objeto);
+    console.log(this.datosCrud);
+    
   }
 }

@@ -46,21 +46,23 @@
                 <mat-label>Título</mat-label>
                 <input matInput formControlName="titulo">
               </mat-form-field>
-              <textarea type="text" class="texto-crud"></textarea>
+              <textarea type="text" class="texto-crud" formControlName="descripcion"></textarea>
 
               <div class="buttonera">
-                <button mat-stroked-button type="button">Resetear</button>
-                <button mat-stroked-button type="submit">Cargar datos</button>
+                <button mat-stroked-button type="button" (click)="LimpiarFormulario()">Resetear</button>
+                <button mat-stroked-button type="submit" (click)="EnviarFormulario()" [disabled]="formularioCrud.invalid">Cargar datos</button>
               </div>
         </form>
-        <div class="second-section-crud" *ngIf="false">
-            <div class="content-crud">
-                <div class="header-crud">
-                    <h4 class="title-container">Titulo: </h4>
-                    <h4>Fecha: </h4>
-                </div>
-                <div class="">
-                    <p>Descripción: </p>
+        <div>
+            <div class="second-section-crud" *ngFor="let item of datosCrud" >
+                <div class="content-crud">
+                    <div class="header-crud">
+                        <h4 class="title-container">Titulo: {{item.titulo}}</h4>
+                        <h4>Fecha: {{item.fecha}}</h4>
+                    </div>
+                    <div class="">
+                        <p>Descripción: {{item.descripcion}}</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -68,11 +68,18 @@
     padding: 15px;
 }
 
+.container-second{
+    margin: 0 auto;
+}
+
 .second-section-crud{
     margin: 30px;
     width: 50%;
     border: 1px solid gainsboro;
     border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .content-crud{
