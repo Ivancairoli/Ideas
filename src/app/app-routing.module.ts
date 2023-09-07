@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MenuPrincipalComponent } from './views/menu-principal/menu-principal.component';
-import { NosotrosComponent } from './views/nosotros/nosotros.component';
-import { ServiciosComponent } from './views/servicios/servicios.component';
+import { PruebasComponent } from './views/pruebas/pruebas.component';
+import { MaterialComponent } from './views/material/material.component';
 
 const routes: Routes = [
   {path: '', component: MenuPrincipalComponent},
-  {path: 'nosotros', component: NosotrosComponent},
-  {path: 'servicios', component: ServiciosComponent},
+  {path: 'pruebas', component: PruebasComponent},
+  {path: 'material', component: MaterialComponent},
   {path: '**', component: MenuPrincipalComponent}
 ];
 

@@ -13,11 +13,11 @@ export interface User {
 }
 
 @Component({
-  selector: 'app-servicios',
-  templateUrl: './servicios.component.html',
-  styleUrls: ['./servicios.component.css']
+  selector: 'app-material',
+  templateUrl: './material.component.html',
+  styleUrls: ['./material.component.css']
 })
-export class ServiciosComponent implements OnInit {
+export class MaterialComponent implements OnInit {
   //Formulario Autocomplete
   formularioAutocomplete: FormGroup;
   @ViewChild('provinciaInput', { static: true }) provinciaInput!: ElementRef;
