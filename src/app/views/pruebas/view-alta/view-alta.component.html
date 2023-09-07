@@ -1,0 +1,40 @@
+<form class="altaRapidaForm" [formGroup]="altaRapidaForm">
+    <!--General-->
+    <mat-accordion multi>
+      <mat-expansion-panel class="expansion-panel" expanded>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Datos Generales </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-sec-general #seccionGeneral></app-sec-general>
+      </mat-expansion-panel>
+      <!--Administración fiscal-->
+      <mat-expansion-panel class="expansion-panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title> Datos Administrativos </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-sec-adm-fisc #seccionAdmFisc></app-sec-adm-fisc>
+      </mat-expansion-panel>
+      <!--Comercial-->
+      <mat-expansion-panel class="expansion-panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title> Datos Comerciales </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-sec-comercial #seccionComercial></app-sec-comercial>
+      </mat-expansion-panel>
+      <!--Integracion-->
+      <mat-expansion-panel class="expansion-panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title> Datos Integración </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-sec-integracion #seccionIntegracion></app-sec-integracion>
+      </mat-expansion-panel>
+      <!--Logística-->
+      <mat-expansion-panel class="expansion-panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title> Datos logística </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-sec-logistica #seccionLogistica></app-sec-logistica>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <app-sec-botonera></app-sec-botonera>
+</form>

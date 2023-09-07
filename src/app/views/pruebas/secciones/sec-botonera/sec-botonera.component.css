@@ -1,0 +1,22 @@
+.keypad{
+    display: flex;
+    justify-content: end;
+    padding: 5px;
+    margin-bottom: 5rem ;
+  }
+  
+  .btn-continuar{
+    background-color: #68AD9C;
+    color: white;
+  }
+  
+  .btn-guardar{
+    background-color: #161B37;
+    color: white;
+    margin: 0 10px;
+  }
+  
+  .btn-volver{
+    background-color: white;
+    color: black;
+  }

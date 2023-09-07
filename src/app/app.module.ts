@@ -22,6 +22,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DetallesComponent } from './shared/modals/detalles/detalles.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { SecGeneralComponent } from './views/pruebas/secciones/sec-general/sec-general.component';
+import { SecAdmFiscComponent } from './views/pruebas/secciones/sec-adm-fisc/sec-adm-fisc.component';
+import { SecComercialComponent } from './views/pruebas/secciones/sec-comercial/sec-comercial.component';
+import { SecIntegracionComponent } from './views/pruebas/secciones/sec-integracion/sec-integracion.component';
+import { SecLogisticaComponent } from './views/pruebas/secciones/sec-logistica/sec-logistica.component';
+import { SecBotoneraComponent } from './views/pruebas/secciones/sec-botonera/sec-botonera.component';
+import { ViewAltaComponent } from './views/pruebas/view-alta/view-alta.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -32,6 +40,13 @@ import { MatNativeDateModule } from '@angular/material/core';
     PruebasComponent,
     MaterialComponent,
     DetallesComponent,
+    SecGeneralComponent,
+    SecAdmFiscComponent,
+    SecComercialComponent,
+    SecIntegracionComponent,
+    SecLogisticaComponent,
+    SecBotoneraComponent,
+    ViewAltaComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +63,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatIconModule,
     MatDialogModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

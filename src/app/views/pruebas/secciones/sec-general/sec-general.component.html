@@ -1,0 +1,37 @@
+<form [formGroup]="formgroup">
+    <div class="form-container">
+      <div class="left-side-container">
+          <mat-form-field class="example-full-width fields" appearance="fill">
+            <mat-label>CUIT</mat-label>
+            <input type="text" matInput formControlName="Cuit" placeholder="Ex. pat@example.com" class="input-fields">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width fields" appearance="fill">
+            <mat-label>Nombre de fantasía</mat-label>
+            <input type="text" matInput formControlName="NombreFantasia" placeholder="Ex. Nombre de fantasía" class="input-fields">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width fields" appearance="fill">
+            <mat-label>Razón social</mat-label>
+            <input type="text" matInput formControlName="RazonSocial" placeholder="Ex. Razón social " class="input-fields">
+          </mat-form-field>
+      </div>
+      <div class="right-side-container">
+        <mat-form-field appearance="fill" class="example-full-width fields">
+          <mat-label>Próxima interacción</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="ProximaInteraccion">
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="example-full-width fields">
+          <mat-label>Ultima interacción</mat-label>
+          <input matInput [matDatepicker]="picker2" formControlName="UltimaInteraccion" [min]="minDate" [max]="maxDate">
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
